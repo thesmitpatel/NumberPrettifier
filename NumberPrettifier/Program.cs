@@ -41,7 +41,6 @@ namespace NumberPrettifier
             const double trillion = 1_000_000_000_000;
             const double billion = 1_000_000_000;
             const double million = 1_000_000;
-            const double thousand = 1_000;
 
             string result;
 
