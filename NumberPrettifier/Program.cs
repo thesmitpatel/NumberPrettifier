@@ -35,14 +35,38 @@ namespace NumberPrettifier
 
         public static string PrettifyNumber(double number)
         {
-            if (number >= 1_000_000_000_000)
-                return (number / 1_000_000_000_000).ToString("0.#") + "T";
-            else if (number >= 1_000_000_000)
-                return (number / 1_000_000_000).ToString("0.#") + "B";
-            else if (number >= 1_000_000)
-                return (number / 1_000_000).ToString("0.#") + "M";
+            bool isNegative = number < 0;
+            number = Math.Abs(number);
+
+            const double trillion = 1_000_000_000_000;
+            const double billion = 1_000_000_000;
+            const double million = 1_000_000;
+            const double thousand = 1_000;
+
+            string result;
+
+            if (number >= trillion)
+            {
+                result = (number / trillion).ToString("0.#") + "T";
+            }
+            else if (number >= billion)
+            {
+                double billions = number / billion;
+                result = billions >= 999.95 ? "1T" : billions.ToString("0.#") + "B";
+            }
+            else if (number >= million)
+            {
+                double millions = number / million;
+                result = millions >= 999.95 ? "1B" : millions.ToString("0.#") + "M";
+            }
             else
-                return number.ToString();
+            {
+                result = number.ToString();
+            }
+
+            return isNegative ? "-" + result : result;
         }
+
+
     }
 }
