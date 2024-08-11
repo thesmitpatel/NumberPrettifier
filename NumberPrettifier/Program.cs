@@ -6,16 +6,29 @@ namespace NumberPrettifier
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number:");
-            if (double.TryParse(Console.ReadLine(), out double number))
+            bool continueRunning = true;
+
+            while (continueRunning)
             {
-                string prettified = PrettifyNumber(number);
-                Console.WriteLine($"Prettified number: {prettified}");
+                Console.WriteLine("Enter a number:");
+                if (double.TryParse(Console.ReadLine(), out double number))
+                {
+                    string prettified = PrettifyNumber(number);
+                    Console.WriteLine($"Prettified number: {prettified}");
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid number.");
+                }
+
+                Console.WriteLine("Do you want to enter another number? (yes/no):");
+                string response = Console.ReadLine().Trim().ToLower();
+                if (response != "yes")
+                {
+                    continueRunning = false;
+                }
             }
-            else
-            {
-                Console.WriteLine("Please enter a valid number.");
-            }
+
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
