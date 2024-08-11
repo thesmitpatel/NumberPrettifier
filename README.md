@@ -38,11 +38,6 @@ The source code for the Number Prettifier is located in the main project directo
 - **`NumberPrettifier.Tests:`** This folder contains NUnit tests to verify the functionality of the program.
 
 
-## Assumptions
-
-- The program assumes the user enters a valid number.
-- It works with both whole numbers and decimal numbers but doesn’t handle negative numbers or special cases like `NaN`.
-
 ## Design Choices
 
 - **Simple and Clear:**  
@@ -58,3 +53,13 @@ The source code for the Number Prettifier is located in the main project directo
 
 - **Automated Testing:**  
   The program can be tested automatically using NUnit to make sure the prettifying process works correctly in different cases.
+
+## Screenshots
+
+Here are some screenshots demonstrating the application in action:
+
+![image](https://github.com/user-attachments/assets/493372e1-f835-461d-b958-19916e0df62d)
+
+![image](https://github.com/user-attachments/assets/9aabb594-7836-4447-9360-bf2ecb66e433)
+
+
